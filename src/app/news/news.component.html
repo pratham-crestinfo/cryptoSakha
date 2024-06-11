@@ -1,0 +1,8 @@
+<!-- <p>news works!</p> -->
+<app-navbar></app-navbar>
+<div class="grid_container" *ngIf="loaded else notloaded">
+        <app-newscard *ngFor="let news of newsData" [element]="news"></app-newscard>
+</div>
+<ng-template #notloaded>
+        <app-loading></app-loading>
+</ng-template>

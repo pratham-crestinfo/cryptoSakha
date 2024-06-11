@@ -1,0 +1,109 @@
+<!-- <p>home works!</p> -->
+<!-- <app-lottery-text></app-lottery-text> -->
+
+<div class="home-container" #vantaContainer>
+     <div class="nav-fix" *ngIf="canAdd">
+          <app-navbar></app-navbar>
+     </div>
+    
+     <div class="fixed-element">
+          <p id="fixed-text"></p>
+      </div>
+      <div class="fixed-line">
+          <div class="line-round active" [class.active]="currentSection === 1"></div>
+          <div class="line-round" [class.active]="currentSection === 2"></div>
+          <div class="line-round" [class.active]="currentSection === 3"></div>
+          <div class="line-round" [class.active]="currentSection === 4"></div>
+      </div>
+
+          <div class="parallax" id="first">
+               <div class="left-content">
+                    <p class="upper">Welcome to</p>
+                    <div class="lower">
+                         <hr>
+                         <p>Crypto-Sakha!</p>
+                    </div>
+                   
+                    <p class="lowest">
+                        Your ultimate companion in the dynamic world of cryptocurrencies. Whether you're a seasoned trader or just starting your crypto journey, Cryptomate provides you with the tools, insights, and data you need to navigate the markets confidently. Join us and experience the future of digital finance with ease and security.
+                    </p>
+                    <div *ngIf="!canAdd">
+                         <app-auth *ngIf="wantToAuth else logbutton" ></app-auth>
+                         <ng-template #logbutton>
+                              <!-- <button  >Signin/SignUp</button> -->
+                              <p id="authbtn" (click)="wantToAuthpressed()"> get Cryptofied..! -> </p>
+                         </ng-template>
+                    </div>
+                   
+               </div>
+             
+          </div>
+          <div class="parallax" id="second"> <div class="left-content">
+               <p class="upper">1000+ Crypto Coins</p>
+               <div class="lower">
+                    <hr>
+                    <p class="gradient-text">At your Dashboard</p>
+               </div>
+               <p class="lowest">
+                    Stay ahead of the market with Cryptomate's comprehensive dashboard, offering real-time data on over 500 cryptocurrencies. Track market cap, price changes, 24-hour volume, and more. Our intuitive interface provides all the essential information at your fingertips, empowering you to make informed investment decisions and discover new opportunities.
+               </p>
+          </div>
+     </div>
+          <div class="parallax" id="third"> <div class="left-content">
+               <p class="upper">Create Now </p>
+               <div class="lower">
+                    <hr>
+                    <p>your own Watch-list</p>
+               </div>
+               <p class="lowest">Personalize your crypto experience with Cryptomate's custom watchlist feature. Add your favorite coins and monitor their performance in real time. Set up alerts for significant price movements and stay updated on the coins that matter most to you. With Cryptomate, managing your investments is easier and more efficient.
+
+
+               </p>
+          </div>
+     </div>
+          <div class="parallax" id="fourth">
+               <div class="left-content">
+                    <p class="upper">Be updated with</p>
+                    <div class="lower">
+                         <hr>
+                         <p>News at tips</p>
+                    </div>
+                    <p class="lowest">Stay informed with the latest crypto news with Cryptomate. Our platform aggregates top stories, market analyses, and expert insights from trusted sources, delivering them directly to your dashboard. Whether it's breaking news or in-depth reports, you'll always be updated with information that impacts your investments. Stay ahead with Cryptomate.
+                    </p>
+               </div>
+          </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="parallax" ></div>
+<button (click)="goToAuth()">AUTh</button>
+<h1>{{isAuthenticated}}</h1>
+<h1 *ngIf="isAuthenticated"> you are Logged in</h1>
+<h1 *ngIf="!isAuthenticated"> please log in</h1>
+
+
+<form #coinform="ngForm">
+     <label for="coinid">CoinId:</label>
+     <input type="text" name="coinid" ngModel/>
+     <button (click)="addcoinid(coinform)" [disabled]="!canAdd">ADD</button>
+</form>
+<button (click)="getid()" [disabled]="!canAdd">GET ID</button>
+<button (click)="goWatchList()">GO TO WATCH LIST</button>
+{{test_var}} -->

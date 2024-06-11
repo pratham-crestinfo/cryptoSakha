@@ -1,0 +1,25 @@
+h1{
+     font-size: 350px;
+     background: linear-gradient(to right,hotpink,blue);
+     background-clip: text;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     text-align: center;
+     margin: 50px 0 0 0 ;
+}
+.text{
+     text-align: center;
+}
+.text p{
+     margin: 0;
+}
+
+a{
+     background: linear-gradient(to right,hotpink,blue);
+     background-clip: text;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+a:hover{
+     font-size: larger;
+}

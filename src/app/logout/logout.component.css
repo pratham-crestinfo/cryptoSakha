@@ -1,0 +1,48 @@
+
+.logout-text{
+     text-align: center;
+}
+h1{
+     font-size: 200px;
+     margin: 200px 0 0 0;
+}
+h2{
+     margin: 0px;
+     font-size:30px;
+}
+
+.logout{
+     font-size: 24px;
+     cursor: pointer;
+     /* font-weight: bold; */
+     background: linear-gradient(to right, hotpink, blue);
+     background-clip: text;
+     -webkit-background-clip: text;
+     color: transparent;
+     position: relative;
+     text-decoration: none;
+     padding: 5px 0;
+     transition: all 0.3s ease;
+     display: inline-block;
+}
+
+.logout::after {
+     content: '';
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     width:100%;
+     display: inline;
+     height: 2px;
+     background: white;
+     transform: scaleX(0);
+     transform-origin: bottom right;
+     transition: transform 0.3s ease;
+     font-size: larger;
+ }
+ 
+ .logout:hover::after {
+    
+     transform: scaleX(1);
+     transform-origin: bottom left;
+ }

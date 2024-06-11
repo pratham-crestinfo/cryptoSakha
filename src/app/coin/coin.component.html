@@ -1,0 +1,73 @@
+<div *ngIf="fullpageloaded else notloaded">
+
+
+<div class="face_container">
+  <div class="face">
+    <p id="coin_name">{{ name }} ({{ symbol }})</p>
+    <hr />
+    <div class="pricing">
+      <p id="coin_price">${{ price }}</p>
+      <p id="change" [ngStyle]="{ color: getColor() }">{{ change + "%" }}</p>
+    </div>
+    <button (click)="addId()" id="add" *ngIf="canAdd">Subscribe</button>
+  </div>
+ 
+  <div class="smudgy-circle">
+    <img src="{{ iconUrl }}" alt="Circular Image" class="center-image" />
+  </div>
+</div>
+
+<div class="card-container" #cardContainer>
+  <div class="card" *ngFor="let item of data">
+    {{ item.value }}
+    <hr />
+    <p>{{ item.field }}</p>
+  </div>
+</div>
+
+<div class="chart-cointainer">
+  <div style="width: 60%" class="chart-comp">
+    <p id="chart_name">Price Chart</p>
+    <hr />
+  </div>
+  <div style="width: 60%" class="chart-comp">
+    <p id="chart_name">OHLC Chart</p>
+    <hr />
+  </div>
+  <div *ngIf="isDataLoaded; else loading" class="chart-comp charts">
+    <app-chart [colour]="color"></app-chart>
+  </div>
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+  <app-chart2 class="chart-comp charts"></app-chart2>
+</div>
+
+<div class="desc-container">
+  <p id="coin_name">More About {{ name }}</p>
+  <hr />
+  <div class="desc">
+    {{ description }}
+    <br />
+    <em style="font-size: 12px">
+      You can also visit to following set of website to get more info for the
+      same:</em>
+      <div class="links-container">
+        <div *ngFor="let item of link; let i = index" class="link-box">
+          <mat-icon *ngIf="item.type != null">{{item.type }}</mat-icon>
+          <a href="{{ item.url }}">{{ item.name }} - {{item.type}}</a>
+        </div>
+      </div>
+    
+  </div>
+</div>
+</div>
+<ng-template #notloaded>
+  <app-loading></app-loading>
+</ng-template>
+<!-- 
+{{ id }}
+colour: {{ color }}
+<hr />
+
+ -->

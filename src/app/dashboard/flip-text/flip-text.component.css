@@ -1,0 +1,54 @@
+.lottery-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 200px;
+     /* width: 500px; */
+     font-size: 2rem;
+   }
+   
+   .lottery-box {
+     width: 900px;
+     height: 50px;
+     overflow: hidden;
+     border: 2px solid #000;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+   
+   .lottery-text {
+     display: inline-block;
+     transform: translateY(0);
+     background: linear-gradient(to right,hotpink,blue);
+     background-clip: text;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+   }
+   
+   .spin-up {
+     animation: spin-up 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+   }
+   
+   .spin-down {
+     animation: spin-down 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+   }
+   
+   @keyframes spin-up {
+     0% {
+       transform: translateY(100%);
+     }
+     100% {
+       transform: translateY(0);
+     }
+   }
+   
+   @keyframes spin-down {
+     0% {
+       transform: translateY(-100%);
+     }
+     100% {
+       transform: translateY(0);
+     }
+   }
+   

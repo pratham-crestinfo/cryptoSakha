@@ -1,0 +1,17 @@
+<div>
+    <div class="card">
+        <div *ngIf="randomIndex==1" (click)="gotoNews(element.url)">
+            <img [src]="element.thumbnail" />
+            <p>{{element.title}}</p>
+            <p>{{element.description}}</p>
+        </div>
+        <div *ngIf="randomIndex==2" (click)="gotoNews(element.url)">
+            <p>{{element.description}}</p>
+        </div>
+        <div *ngIf="randomIndex==3" (click)="gotoNews(element.url)">
+            <img [src]="element.thumbnail" />
+            <p>{{element.title}}</p>
+        </div>
+        </div>
+</div>
+

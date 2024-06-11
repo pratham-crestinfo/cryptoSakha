@@ -1,0 +1,19 @@
+<!-- <div class="flip-container">
+     <div *ngIf="currentLineIndex >= 0" class="flip-box" [class.flip]="flipped">
+       <div class="flip-box-inner">
+         <div class="flip-box-front">
+           {{ lines[currentLineIndex] }}
+         </div>
+         <div class="flip-box-back">
+           {{ lines[currentLineIndex] }}
+         </div>
+       </div>
+     </div>
+   </div>
+    -->
+    <div class="lottery-container">
+     <div class="lottery-box">
+       <div [ngClass]="{'spin-up': animateUp, 'spin-down': animateDown}" class="lottery-text">{{ lines[currentLineIndex] }}</div>
+     </div>
+   </div>
+   

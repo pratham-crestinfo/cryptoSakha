@@ -1,0 +1,5 @@
+
+<Input type="text" name="stext" (input)="getsuggestion(stext)"  #stext placeholder="Enter Coin name here to search">
+<div class="suggest-container">
+     <h1 *ngFor="let x of suggestions" (click)="coinsdetails(x.uuid)">{{x.name}} ( {{x.uuid}} )</h1>
+</div>

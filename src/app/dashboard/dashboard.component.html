@@ -1,0 +1,130 @@
+<app-navbar></app-navbar>
+<div *ngIf="loading==2 else notloaded">
+<div class="title" id="firsttitle">
+  <p >Some Global Statistics</p>
+  <hr />
+</div>
+<!-- <app-rotating-globe></app-rotating-globe> -->
+<app-flip-text [lines]="gstats"></app-flip-text>
+<div class="container">
+<div class="sb-container">
+  <div class="title">
+    <p >Global Gainers</p>
+    <hr />
+  </div>
+  <div class="title">
+    <p >Global Drainers</p>
+    <hr />
+  </div>
+  <div class="toppers">
+    <div class="sbtab"  *ngFor="let item of bestcoins" (click)="getCoinDetails(item.uuid)">
+      <img src={{item.iconUrl}} />
+      <div class="scoreboard-names">
+        <p style="font-size: 12px;">{{item.symbol}}</p>
+        <strong>{{item.name.substring(0, 10)}}</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="loosers">
+    <div class="sbtab"  *ngFor="let item of newestCoins" (click)="getCoinDetails(item.uuid)">
+      <img src={{item.iconUrl}} />
+      <div class="scoreboard-names">
+        <p style="font-size: 12px;">{{item.symbol}}</p>
+        <strong>{{item.name.substring(0, 10)}}</strong>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="title">
+  <p >More Coins Curated for you</p>
+  <hr />
+</div>
+
+<div class="pnbuttons">
+  <p *ngIf="!prevpossible" style="font-size: 18px;">More Coins: &nbsp;</p>
+  <button (click)="prev()" *ngIf="prevpossible"> < </button>
+  <button (click)="forward()"> > </button>
+</div>
+
+
+<div class="tab-container"(mousemove)="onMouseMove($event)" >
+  <!--  -->
+  <!-- <div class="blurry-circle" [ngStyle]="{'transform': circleTransform}"></div> -->
+  <div class="tab" *ngFor="let item of coinData"  [ngStyle]="{'--item-color': item.color}" (click)="getCoinDetails(item.uuid)">
+    <div class="data">
+      <img [src]="item.iconUrl" />
+      <div class="info">
+        <div class="name">
+          <p class="full-name">{{item.name}}</p>
+          <p class="symbol">{{item.symbol}}</p>
+        </div>
+        <div class="price-info"> 
+          <p class="coin-price">{{"$" + item.price}}</p>
+          <p [ngStyle]="{color: getColor(item.change)}">{{item.change + "%"}}</p>
+        </div>
+      </div>
+    </div>
+    <!-- Uncomment these lines if you are using them -->
+    <!-- <app-sparkline *ngIf="datafetched && item.uuid else notfetched" [data]="item.sparkLineData" [id]="item.uuid"></app-sparkline>
+    <ng-template #notfetched>
+      <p>Loading</p>
+    </ng-template> -->
+  </div>
+</div>
+
+</div>
+<ng-template #notloaded>
+   <!-- <p>Thank you for your paitainace....fetching your data</p> -->
+   <app-loading></app-loading>
+</ng-template>
+
+
+
+
+
+<!-- <div *ngFor="let stat of stats">
+  <strong>{{ getObjectKey(stat) }}:</strong> {{ getObjectValue(stat) }}
+</div>
+<hr />
+Best Perfoming coins
+<div>
+  <h1 *ngFor="let coin of bestcoins">{{ coin.name }}</h1>
+</div>
+Latest coins
+<div>
+  <h1 *ngFor="let coinn of newestCoins">{{ coinn.name }}</h1>
+</div> -->
+<!-- 
+<table>
+  <tr>
+    <th>name</th>
+    <th>icon</th>
+    <th>symbol</th>
+    <th>change</th>
+    <th>price</th>
+  </tr>
+  <tr *ngFor="let data of coinData" (click)="getCoinDetails(data.uuid)">
+    <td>{{data.name}}</td>
+    <img src={{data.iconUrl}}/>
+    <td>{{data.iconUrl}}</td>
+    <td>{{data.symbol}}</td>
+    <td>{{data.change}}</td>
+    <td>{{data.price}}</td>
+  </tr>
+</table> -->

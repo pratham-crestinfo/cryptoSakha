@@ -1,0 +1,16 @@
+
+<form #form="ngForm" #auth>
+  <label for="email">Email:</label>
+  <input type="email" name="email" ngModel required />
+  <label for="password">Password:</label>
+  <div class="pass-div"> 
+    <input type="password" name="password" ngModel required />
+    <p (click)="passreset(form)">Forgot??</p>
+  </div> 
+  <button (click)="onSignIn(form)" [disabled]="!form.valid">SIGN IN</button>
+  <button (click)="onSignUp(form)" [disabled]="!form.valid">SIGN UP</button>
+ 
+
+</form>
+<p *ngIf="error" class="error">{{msg}}</p>
+<p *ngIf="info" class="info">{{msg}}</p>

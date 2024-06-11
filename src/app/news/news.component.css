@@ -1,0 +1,17 @@
+.grid_container{
+columns: 4;
+width: 93%;
+margin: auto auto;
+}
+/* app-newscard{
+    break-inside: avoid;
+    margin-bottom: 16px;
+} */
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* gap: 16px; */
+    /* grid-auto-rows: masonry;/ */
+    /* grid-template-columns: masonry */
+    /* masonry-auto-flow: ordered; */
+    /* align-content: start; */
+    /* align-tracks:start */ 

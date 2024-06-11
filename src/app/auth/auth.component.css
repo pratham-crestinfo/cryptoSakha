@@ -1,0 +1,44 @@
+label{
+     margin-right: 10px;
+     
+}
+input{
+     padding: 10px 15px;
+     margin-right: 10px;
+     border-radius: 6px;
+     height: fit-content;
+}
+button{
+     padding: 10px 15px;
+     margin-right: 10px;
+     border-radius: 6px;
+     height: fit-content;
+}
+.error{
+     font-size: 20px;
+     color: red;
+}
+.pass-div{
+     display: flex;
+     width: fit-content;
+     flex-direction: column;
+}
+.pass-div p{
+     margin: 10px 20px 0 0;
+     text-align: right;
+     margin-top: 12px;
+     font-size: 12px;
+
+}
+
+.pass-div p:hover{
+     cursor: pointer;
+}
+form{
+     display: flex;
+     height: fit-content;
+}
+.info{
+     font-size: 20px;
+     color: green;
+}

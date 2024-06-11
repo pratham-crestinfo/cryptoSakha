@@ -1,0 +1,203 @@
+
+img{
+     width:30px;
+     height:30px
+}
+tr:hover{
+     cursor: pointer;
+     text-decoration: underline;
+}
+hr{
+     background-color: white;
+     border: none;
+     height: 2px; /* Adjust the height as needed */
+     background: linear-gradient(to right, white, #212529);
+     margin: 8px 0;
+}
+.title p{
+     font-size:20px;
+     margin-bottom:8px;
+}
+.title hr{
+     width: 500px;
+}
+
+
+.sb-container{
+     width: 100%;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap:15px;
+     margin: 20px auto 50px auto
+}
+.toppers , .loosers{
+     width: 100%;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     gap:5px;
+}
+.sbtab{
+     background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+     border-radius: 6px; 
+     display: flex;
+     padding-left:10%;
+     align-items: center;
+     justify-content: left;
+     text-align: center;
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Light shadow */
+     backdrop-filter: blur(10px); /* Background blur */
+     -webkit-backdrop-filter: blur(10px); /* Background blur for Safari */
+     border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border */
+     
+}
+.sbtab p{
+     margin:0;
+     text-align: left;
+}
+.scoreboard-names{
+     margin-left:7%;
+}
+.sbtab{
+     padding:10px 20px;
+}
+
+.toppers .sbtab:hover {
+     border-radius: 6px; /* Ensure border-radius remains 6px on hover */
+     /* border-radius: 12px; */
+     /* border-color: linear-gradient(to bottom right, var(--item-color), black);; */
+     background: linear-gradient(black, transparent) padding-box,
+     linear-gradient(to right, green,black) border-box;
+     border-radius: 6px;
+     border: 2px solid transparent;
+ }
+ 
+.loosers .sbtab:hover {
+     border-radius: 6px; /* Ensure border-radius remains 6px on hover */
+     /* border-radius: 12px; */
+     /* border-color: linear-gradient(to bottom right, var(--item-color), black);; */
+     background: linear-gradient(black, transparent) padding-box,
+     linear-gradient(to right, red,black) border-box;
+     border-radius: 6px;
+     border: 2px solid transparent;
+ }
+
+.nav-container{
+     display: flex;
+}
+
+
+
+
+
+
+/* BUTTONS PREVIOUS AND NEXT */
+.pnbuttons{
+     display: flex;
+     justify-content: flex-end;
+}
+
+.pnbuttons button{
+     background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+     border-radius: 6px; 
+     /* Rounded corners */
+     color: white;
+     text-align: center;
+     align-content: center;
+     padding: 10px 20px;
+     max-width: 400px;
+     text-align: center;
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Light shadow */
+     backdrop-filter: blur(10px); /* Background blur */
+     -webkit-backdrop-filter: blur(10px); /* Background blur for Safari */
+     border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border */
+     margin:10px 5px 20px 5px
+}
+.pnbuttons button :hover{
+     font-size: larger;
+}
+
+
+
+
+
+
+
+
+
+.tab-container{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr; 
+     gap:15px;
+     width: 100%;
+
+}
+.tab{
+     background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+     border-radius: 6px; 
+     /* Rounded corners */
+     padding: 20px 40px;
+     max-width: 400px;
+     text-align: center;
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Light shadow */
+     backdrop-filter: blur(10px); /* Background blur */
+     -webkit-backdrop-filter: blur(10px); /* Background blur for Safari */
+     border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border */
+     transition: border 0.3s, border-radius 0.3s;
+}
+.name{
+     display: flex;
+     justify-content: space-between;
+}
+.info{
+     width:100%;
+}
+.info p{
+     text-align: left;
+}
+.data{
+     display: flex;
+     align-items: center;
+}
+.data img{
+     margin-right:10px
+}
+.data p{
+     margin:2px
+}
+.name{
+     font-weight: 200;
+     font-size: 12px;
+}
+app-sparkline{
+     width:90%;
+     height:40%;
+}
+.price-info{
+     display: flex;
+     justify-content: space-between;
+}
+.price-info p{
+     font-size:15px ;
+}
+.blurry-circle {
+     position: absolute;
+     width: 250px;
+     height: 250px;
+     background:radial-gradient(circle,hotpink 0%, black 70%);
+     border-radius: 50%;
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     pointer-events: none;
+     z-index: -1; /* Ensures the circle is behind the tabs */
+ }
+ 
+ .tab:hover {
+     border-radius: 6px; /* Ensure border-radius remains 6px on hover */
+     /* border-radius: 12px; */
+     /* border-color: linear-gradient(to bottom right, var(--item-color), black);; */
+     background: linear-gradient(black, transparent) padding-box,
+     linear-gradient(to right, var(--item-color),black) border-box;
+     border-radius: 6px;
+     border: 2px solid transparent;
+ }
+ 

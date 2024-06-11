@@ -1,0 +1,74 @@
+
+<app-navbar></app-navbar>
+<!-- <table>
+     <tr>
+       <th>name</th>
+       <th>symbol</th>
+       <th>change</th>
+       <th>price</th>
+     </tr>
+     <tr *ngFor="let data of coinData" (click)="getCoinDetails(data.uuid)">
+       <td>{{data.name}}</td>
+       <img src={{data.iconUrl}}/>
+       <td>{{data.symbol}}</td>
+       <td>{{data.change}}</td>
+       <td>{{data.price}}</td>
+     </tr>
+   </table> -->
+ 
+  <!-- </p>
+  <div class="watch-container">
+    <div class="left-view">
+      <div class="head"> 
+        <img src="https://cdn.coinranking.com/Sy33Krudb/btc.svg" />
+        <p id="coin-name">Bitcoin <span class="symbol">(BTC)</span></p>
+      </div>
+      <div class="sparkline"></div>
+      <div class="otherdata"></div>
+    </div>
+    <div class="right-view" >
+      <div class="element" *ngFor="let data of coinData">
+        <div class="name-icon">
+          <img src={{data.iconUrl}} />
+          <p id="coin-name">{{data.name}}</p>
+        </div>
+        <app-sparkline style></app-sparkline>
+        
+        <p id="coin-price">{{data.price}}</p>
+        <p id="coin-change">{{data.change}}</p>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="watch-container">
+    <div class="table-view">
+    <table class="minimalist-table">
+      <p *ngIf="nodata" class="nodata"> 
+        Please Subsrcibe to the coins to get it watched here..! </p>
+     <tr class="heading">
+       <th>Name</th>
+       <th>Symbol</th>
+       <th>Change</th>
+       <th>Price in USD</th>
+       <th>Price in BTC</th>
+       <th>Market Cap</th>
+       
+     </tr>
+     <tr *ngFor="let data of coinData" (click)="getCoinDetails(data.uuid)">
+       <td class="name-icon"><img src={{data.iconUrl}}/>{{data.name}}</td>
+       <td>{{data.symbol}}</td>
+       <td [ngStyle]="{color:getColor(data.change)}">{{data.change + "%"}}</td>
+       <td>{{"$"+ data.price}}</td>
+       <td>{{+ data.vol_24 + "BTC"}}</td>
+       <td>{{"$" + data.marketCap}}</td>
+      
+     </tr>
+   </table>
+    </div>
+    <div class="search-view" >
+      <app-search></app-search>
+     <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat iusto architecto earum eligendi dolores soluta consequuntur nostrum, vero delectus alias, perferendis doloribus veritatis fugiat ullam veniam! Adipisci at ipsa fugiat laudantium explicabo rem quam quod, libero sit impedit, aliquid repudiandae! -->
+    </div>
+  </div> 
+
+
